@@ -20,18 +20,28 @@
 </template>
 
 <script>
+
     export default {
         data(){
             return{
-                isClick:false
+                isClick:false,
+                goodsList:[],
+                bloor:false
             }
         },
         methods:{
-            jump(){
+            jump(){              
                 this.isClick =true;
-                this.$router.push({path:'/login'})
-            }
-        }
+                if(this.bloor){
+                    this.$router.push({path:'/login'});
+                }else{
+                    this.$router.push({path:'/goods'});
+                }
+                
+            },
+      
+        },
+
     }
 </script>
 

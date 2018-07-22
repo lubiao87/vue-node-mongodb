@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    
+     <router-view name="transfromViews"/> 
     <router-view/>
   </div>
 </template>
