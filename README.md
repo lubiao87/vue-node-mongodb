@@ -1,5 +1,5 @@
 # demo3
-![Image text](https://github.com/lubiao87/vue-node-mongodb/blob/master/src/assets/index.png)
+![Image text](https://github.com/lubiao87/img/blob/master/index.png)
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
@@ -26,14 +26,17 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
    > etc   当下文件夹新建文件 **mongo.conf**
    > logs  当下文件夹新建文件 **mongo.log**
 
-[node官网下载](http://nodejs.cn/download/)
-[MongoDB官网下载]( https://www.mongodb.com/download-center#community)
- [MongoDB安装详细教程]( https://www.cnblogs.com/jacksoft/p/6910709.html)
+[node官网下载](http://nodejs.cn/download/)  
+
+[MongoDB官网下载]( https://www.mongodb.com/download-center#community)  
+
+ [MongoDB安装详细教程]( https://www.cnblogs.com/jacksoft/p/6910709.html)  
+
 
 # 编辑mongo.conf 内容 根据win10 64位系统配置
-`
-    #数据库路径
-    dbpath=c:\MongoDB\data\
+```javascript
+    #数据库路径  
+    dbpath=c:\MongoDB\data\  
     #日志输出文件路径
     logpath=c:\MongoDB\logs\mongo.log
     #错误日志采用追加模式，配置这个选项后mongodb的日志会追加到现有的日志文件，而不是从新创建一个新文件
@@ -46,7 +49,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     port=27017
     #http 配置
     httpinterface=true
-`
+```
 
  * 系统环境变量
   path = C:\Program Files\MongoDB\Server\4.0\bin
@@ -104,6 +107,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     >db.createUser({user:"admin",pwd:"admin",roles:["root"] })		创建超级管理员					
     > db.goods.insert({id:101,"name":"biao","age":18})	当前数据库插入数据	   	
     
-
     `
 
