@@ -67,8 +67,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
  * 可自己创建项目 也可使用此项目，此项目依赖的插件以配置好
   > vue init webpack Demo1 
-  > npm install --save axios			下载获取数据插件
-  > npm i mongoose --save				安装数据处理的插件到项目
+
+  > npm install --save axios			*下载获取数据插件*
+
+  > npm i mongoose --save				*安装数据处理的插件到项目*
 
 
 
@@ -79,8 +81,9 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
  * 也可使用Git命令从Github下载代码仓库，先安装git版本管理工具
    [git下载]( https://gitforwindows.org/)
 
-  $ git init
-  $ git clone ' [MongoDB官网下载](https://github.com/lubiao87/vue-node-mongodb.git) '
+ > $ git init
+
+ > $ git clone 'https://github.com/lubiao87/vue-node-mongodb.git'
 
 ***
     # 下载依赖项
@@ -100,12 +103,13 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 
     ###一些数据库处理命令
-    `
+
+```javascript
     C:\Program Files\MongoDB\Server\3.4\bin>mongo  启动mongo数据库sell终端	
     >show dbs 				查看数据库   
     >use admin              创建或进入数据库  	
     >db.createUser({user:"admin",pwd:"admin",roles:["root"] })		创建超级管理员					
     > db.goods.insert({id:101,"name":"biao","age":18})	当前数据库插入数据	   	
     
-    `
+```
 
