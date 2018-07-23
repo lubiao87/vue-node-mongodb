@@ -8,7 +8,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ```bash
 # chrome v8引擎 可扩展高性能服务器 高请求高并发有一定的优势 和c语言性能不相上下 单线程 js开发后端服务 非阻塞io  common规范
- * 下载安装node [node官网下载](http://nodejs.cn/download/)
+ * 下载安装node 
 
 # 安装构建项目的vue脚手架框架
  * npm install -g vue-cli 
@@ -16,17 +16,19 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 # 安装淘宝镜像可加快下载代码速度 
  * npm install -g cnpm
 
-# 安装MongoDB ,可参考菜鸟教程安装
- [MongoDB官网下载]( https://www.mongodb.com/download-center#community)
- [MongoDB安装详细教程]( https://www.cnblogs.com/jacksoft/p/6910709.html)
+# 安装MongoDB ,可参考下面教程安装
+ 
 
 # 配置数据库文件，默认路径 C:\Program Files\MongoDB\Server\3.4\bin 下执行
  * 新建文件夹，例c:\MongoDB 建三个文件
+ ```
    > data
    > etc   当下文件夹新建文件 **mongo.conf**
    > logs  当下文件夹新建文件 **mongo.log**
 
- ```
+[node官网下载](http://nodejs.cn/download/)
+[MongoDB官网下载]( https://www.mongodb.com/download-center#community)
+ [MongoDB安装详细教程]( https://www.cnblogs.com/jacksoft/p/6910709.html)
 
 # 编辑mongo.conf 内容 根据win10 64位系统配置
 `
@@ -46,22 +48,22 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     httpinterface=true
 `
 
-# 系统环境变量
- * path = C:\Program Files\MongoDB\Server\4.0\bin
+ * 系统环境变量
+  path = C:\Program Files\MongoDB\Server\4.0\bin
 
- # 运行数据库 
- * mongod --dbpath c:\MongoDB\data 
+ * 运行数据库 
+  mongod --dbpath c:\MongoDB\data 
 `
 2018-07-14T23:10:48.773+0800 I NETWORK  [thread1] waiting for connections on port 27017   //启动成功端口
 `
- # 安装服务框架
- * npm i -g express-generator
+ * 安装服务框架
+  > npm i -g express-generator
 
- # 创建服务 server位服务名
- * express server
+ * 创建服务 server位服务名
+ > express server
 
- # 可自己创建项目 也可使用此项目，此项目依赖的插件以配置好
-   vue init webpack Demo1 
+ * 可自己创建项目 也可使用此项目，此项目依赖的插件以配置好
+  > vue init webpack Demo1 
   > npm install --save axios			下载获取数据插件
   > npm i mongoose --save				安装数据处理的插件到项目
 
@@ -71,7 +73,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
   ![Image text](https://github.com/lubiao87/img/blob/master/v3.png)
 
   
- # 也可使用Git命令从Github下载代码仓库，先安装git版本管理工具
+ * 也可使用Git命令从Github下载代码仓库，先安装git版本管理工具
    [git下载]( https://gitforwindows.org/)
 
   $ git init
