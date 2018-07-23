@@ -4,7 +4,7 @@
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 
-## 本项目开发流程和介绍
+### 本项目开发流程和介绍
 
 ```bash
 # chrome v8引擎 可扩展高性能服务器 高请求高并发有一定的优势 和c语言性能不相上下 单线程 js开发后端服务 非阻塞io  common规范
@@ -33,7 +33,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
  [MongoDB安装详细教程]( https://www.cnblogs.com/jacksoft/p/6910709.html)  
 
 
-# 编辑mongo.conf 内容 根据win10 64位系统配置
+### 编辑mongo.conf 内容 根据win10 64位系统配置
 ```javascript
     #数据库路径  
     dbpath=c:\MongoDB\data\  
