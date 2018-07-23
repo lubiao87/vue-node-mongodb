@@ -61,8 +61,13 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
    vue init webpack Demo1 
   > npm install --save axios			下载获取数据插件
   > npm i mongoose --save				安装数据处理的插件到项目
+
+  ```
+
   ![Image text](https://github.com/lubiao87/img/blob/master/v2.png)
   ![Image text](https://github.com/lubiao87/img/blob/master/v3.png)
+
+  ```bash
  # 也可使用Git命令从Github下载代码仓库，先安装git版本管理工具
    [git下载]( https://gitforwindows.org/)
 
@@ -84,7 +89,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     # 启动服务
     npm run server
 
-
+```bash
     ###一些数据库处理命令
     `
     C:\Program Files\MongoDB\Server\3.4\bin>mongo  启动mongo数据库sell终端	
@@ -96,4 +101,3 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
     `
 
-```
