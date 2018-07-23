@@ -3,7 +3,7 @@
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-***
+
 ## 本项目开发流程和介绍
 
 ```bash
@@ -26,6 +26,8 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
    > etc   当下文件夹新建文件 **mongo.conf**
    > logs  当下文件夹新建文件 **mongo.log**
 
+ ```
+
 # 编辑mongo.conf 内容 根据win10 64位系统配置
 `
     #数据库路径
@@ -43,6 +45,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     #http 配置
     httpinterface=true
 `
+
 # 系统环境变量
  * path = C:\Program Files\MongoDB\Server\4.0\bin
 
@@ -62,20 +65,21 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
   > npm install --save axios			下载获取数据插件
   > npm i mongoose --save				安装数据处理的插件到项目
 
-  ```
+
 
   ![Image text](https://github.com/lubiao87/img/blob/master/v2.png)
   ![Image text](https://github.com/lubiao87/img/blob/master/v3.png)
 
-  ```bash
+  
  # 也可使用Git命令从Github下载代码仓库，先安装git版本管理工具
    [git下载]( https://gitforwindows.org/)
 
   $ git init
   $ git clone ' [MongoDB官网下载](https://github.com/lubiao87/vue-node-mongodb.git) '
 
+***
     # 下载依赖项
-    npm install
+    cnpm install
 
     # 调试
     npm run dev
@@ -89,7 +93,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     # 启动服务
     npm run server
 
-```bash
+
     ###一些数据库处理命令
     `
     C:\Program Files\MongoDB\Server\3.4\bin>mongo  启动mongo数据库sell终端	
