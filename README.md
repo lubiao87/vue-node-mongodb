@@ -23,7 +23,9 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
  * 新建文件夹，例c:\MongoDB 建三个文件
  ```
    > data
+
    > etc   当下文件夹新建文件 **mongo.conf**
+
    > logs  当下文件夹新建文件 **mongo.log**
 
 [node官网下载](http://nodejs.cn/download/)  
@@ -56,9 +58,11 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
  * 运行数据库 
   mongod --dbpath c:\MongoDB\data 
+
 `
 2018-07-14T23:10:48.773+0800 I NETWORK  [thread1] waiting for connections on port 27017   //启动成功端口
 `
+
  * 安装服务框架
   > npm i -g express-generator
 

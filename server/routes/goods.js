@@ -20,6 +20,10 @@ mongoose.connection.on("disconnected",function () {
 router.get('/', function(req, res, next) {
     //查找数据
   Goods.find({ },function(err,doc){
+      var sort =req.param("sort");
+      let params = {};
+      let goodsModel = Goods.find(params);
+      goodsModel.sort({"salePrice":sort});   //排序
     if(err){
         //输出json文件
         res.json({
