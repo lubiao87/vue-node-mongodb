@@ -19,28 +19,34 @@ mongoose.connection.on("disconnected",function () {
 /* GET users listing. */
 router.get('/', function(req, res, next) {
     //查找数据
-  Goods.find({ },function(err,doc){
-      var sort =req.param("sort");
-      let params = {};
-      let goodsModel = Goods.find(params);
-      goodsModel.sort({"salePrice":sort});   //排序
-    if(err){
-        //输出json文件
-        res.json({
-            status:"1",
-            msg:err.message
-        })
-    }else{
-        res.json({
-            status:"0",
-            msg:"",
-            result:{
-                count:doc.length,
-                list:doc
-            }
-        })
-    }
-  })
+//   Goods.find({ },function(err,doc){
+      let page =parseInt(req.param("page")) ;   //获取前端的参数 expares框架
+      let pageSize =parseInt(req.param("pageSize")) ;  //数量
+      let sort =req.param("sort");    
+      let skip =(page-1) * pageSize;
+      let params = {};              //假设的条件
+      let goodsModel = Goods.find(params).skip(skip).limit(pageSize);   //查找所有数据skip()跳过数据
+      goodsModel.sort({"salePrice":sort});   //排序 1升序  -1降序
+      goodsModel.exec(function (err,doc) { 
+        if(err){
+            //输出json文件
+            res.json({
+                status:"0",
+                msg:err.message
+            })
+        }else{
+            res.json({
+                status:"200",
+                msg:"",
+                result:{
+                    count:doc.length,
+                    list:doc
+                }
+            })
+        }
+       })
+   
+//   })
 });
 
 module.exports = router;
