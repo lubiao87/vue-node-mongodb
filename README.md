@@ -73,7 +73,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     ![Image text](https://github.com/lubiao87/img/blob/master/mongo_import.png)
   
   * json文件规范
-  
+
+  ![Image text](https://github.com/lubiao87/img/blob/master/json_files.png)
+
+  ***
     ![Image text](https://github.com/lubiao87/img/blob/master/index.png)
 
 
