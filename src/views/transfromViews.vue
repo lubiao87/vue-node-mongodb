@@ -149,12 +149,16 @@
    font-size: 30px;
     color: #2ec0f6;
   margin-bottom: 20px;
+  text-align: center;
+}
+.title1{
+    text-align: center;
 }
 .page1:hover{
   cursor: pointer;
 }
 .page1:hover .bg-img{
-  cursor: pointer;
+    cursor: pointer;
      animation: Tremble 0.4s  ease forwards;
     -moz-animation:Tremble 0.4s  ease forwards;	/* Firefox */
     -webkit-animation: Tremble 0.4s  ease forwards;	/* Safari 和 Chrome */

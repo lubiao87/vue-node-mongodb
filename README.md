@@ -20,7 +20,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
  
 
 # 配置数据库文件，默认路径 C:\Program Files\MongoDB\Server\3.4\bin 下执行
- * 新建文件夹，例c:\MongoDB 建三个文件
+ * 新建文件夹，例c:\MongoDB 建三个文件夹
  ```
    > data
 
@@ -76,9 +76,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
   ![Image text](https://github.com/lubiao87/img/blob/master/json_files.png)
 
-  ***
-    ![Image text](https://github.com/lubiao87/img/blob/master/index.png)
-
+ ***
 
   ### 一些数据库处理命令
 
