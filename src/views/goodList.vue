@@ -31,12 +31,12 @@
             
                 axios.get("/goods").then((res)=>{
                     let re = res.data;
-                    if(re.status == "0"){
+                    if(re.status == "200"){
                         this.goodsList = re.result.list ;
 
                         console.log(this.goodsList)
                     }else{
-                        this.goodsList = "错";
+                        this.goodsList = "获取数据失败";
                     }
                 })
         }

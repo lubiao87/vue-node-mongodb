@@ -3,7 +3,6 @@ var Schema = mongoose.Schema;
 
 // 定义模型
 var produtSchema = new Schema({
-
     "productId":String,
     "productName":String,
     "salePrice":Number,

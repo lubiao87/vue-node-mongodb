@@ -26,7 +26,7 @@
             return{
                 isClick:false,
                 goodsList:[],
-                bloor:false
+                bloor:true
             }
         },
         methods:{

@@ -25,7 +25,7 @@ router.get('/', function(req, res, next) {
       let sort =req.param("sort");    
       let skip =(page-1) * pageSize;
       let params = {};              //假设的条件
-      let goodsModel = Goods.find(params).skip(skip).limit(pageSize);   //查找所有数据skip()跳过数据
+      let goodsModel = Goods.find(params).skip(skip).limit(pageSize);   //查找所有数据skip()跳过N条
       goodsModel.sort({"salePrice":sort});   //排序 1升序  -1降序
       goodsModel.exec(function (err,doc) { 
         if(err){

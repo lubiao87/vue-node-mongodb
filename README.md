@@ -32,8 +32,9 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 [MongoDB官网下载]( https://www.mongodb.com/download-center#community)  
 
- [MongoDB安装详细教程]( https://www.cnblogs.com/jacksoft/p/6910709.html)  
+[MongoDB安装详细教程]( https://www.cnblogs.com/jacksoft/p/6910709.html)  
 
+[MongoVue客户端安装地址]( http://mongovue.software.informer.com/download/)  
 
 ### 编辑mongo.conf 内容 根据win10 64位系统配置
 ```javascript
@@ -63,12 +64,126 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 2018-07-14T23:10:48.773+0800 I NETWORK  [thread1] waiting for connections on port 27017   //启动成功端口
 `
 
+  * mongoVue客户端的使用很简单，得先cmd启动  > mongod --dbpath c:\MongoDB\data 
+  * 打开后创建数据库
+     ![Image text](https://github.com/lubiao87/img/blob/master/mongovue1.png)
+
+  * 导入json文件增加数据集合
+
+    ![Image text](https://github.com/lubiao87/img/blob/master/mongo_import.png)
+  
+  * json文件规范
+  
+    ![Image text](https://github.com/lubiao87/img/blob/master/index.png)
+
+
+  ### 一些数据库处理命令
+
+```javascript
+    C:\Program Files\MongoDB\Server\3.4\bin>mongo  启动mongo数据库sell终端	
+    >show dbs 				查看数据库   
+    >use admin              创建或进入数据库  	
+    >db.createUser({user:"admin",pwd:"admin",roles:["root"] })		创建超级管理员					
+    > db.goods.insert({id:101,"name":"biao","age":18})	当前数据库插入数据	   	
+    
+```
+
  * 安装服务框架
   > npm i -g express-generator
 
  * 创建服务 server位服务名
+
  > express server
 
+ * node启动服务
+
+ > node server/bin/www
+
+***
+
+ ### 分页功能的后台代码
+
+ * 在models文件夹新建js文件编写数据模型(本项目例：goods.js)
+
+```javascript
+var mongoose = require("mongoose");
+
+var Schema = mongoose.Schema;
+
+// 定义模型
+var produtSchema = new Schema({
+    "productId":String,
+    "productName":String,
+    "salePrice":Number,
+    "productImage":String,
+    "productUrl":String
+});
+
+//输出数据模型
+module.exports = mongoose.model("Good",produtSchema);    //集合这里写要少个s
+
+```
+
+ * 在routes新建路由查询数据的js代码
+
+```javascript
+var express = require('express');
+var router = express.Router();
+var mongoose = require("mongoose");
+var Goods = require("../models/goods")
+
+// mongoose.connect("mongodb://root:123456@127.0.0.1:27017/") 带密码的链接数据库
+mongoose.connect("mongodb://localhost:27017/db_demo",{ useNewUrlParser: true });
+
+mongoose.connection.on("connected",function () {
+    console.log("链接成功")
+})
+mongoose.connection.on("error",function () {
+  console.log("链接失败")
+})
+mongoose.connection.on("disconnected",function () {
+  console.log("链接断开")
+})
+
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+    //查找数据
+//   Goods.find({ },function(err,doc){
+      let page =parseInt(req.param("page")) ;   //获取前端的参数 expares框架
+      let pageSize =parseInt(req.param("pageSize")) ;  //数量
+      let sort =req.param("sort");    
+      let skip =(page-1) * pageSize;
+      let params = {};              //假设的条件
+      let goodsModel = Goods.find(params).skip(skip).limit(pageSize);   //查找所有数据skip()跳过N条
+      goodsModel.sort({"salePrice":sort});   //排序 1升序  -1降序
+      goodsModel.exec(function (err,doc) { 
+        if(err){
+            //输出json文件
+            res.json({
+                status:"0",
+                msg:err.message
+            })
+        }else{
+            res.json({
+                status:"200",
+                msg:"",
+                result:{
+                    count:doc.length,
+                    list:doc
+                }
+            })
+        }
+       })
+   
+//   })
+});
+
+module.exports = router;
+
+
+```
+
+***
  * 可自己创建项目 也可使用此项目，此项目依赖的插件以配置好
   > vue init webpack Demo1 
 
@@ -106,14 +221,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     npm run server
 
 
-    ###一些数据库处理命令
 
-```javascript
-    C:\Program Files\MongoDB\Server\3.4\bin>mongo  启动mongo数据库sell终端	
-    >show dbs 				查看数据库   
-    >use admin              创建或进入数据库  	
-    >db.createUser({user:"admin",pwd:"admin",roles:["root"] })		创建超级管理员					
-    > db.goods.insert({id:101,"name":"biao","age":18})	当前数据库插入数据	   	
-    
-```
 
