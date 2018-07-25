@@ -19,9 +19,9 @@ export default {
   height: 960px;
   }
  
-body{width: 100%; height: 100%; margin: 0;padding: 0;font-family: "微软雅黑";overflow: hidden; background-color: #191c2d; color: #fff;}
+body{width: 100%; height: 100%; margin: 0;padding: 0;font-family: "微软雅黑"; background-color: #191c2d; color: #fff;}
 body,html{-webkit-text-size-adjust: none;width: 100%;height: 100%;}
-*{text-decoration: none;list-style: none;}
+*{text-decoration: none;list-style: none;box-sizing: border-box;}
 img{border: 0px;}
 ul,li,dl,dd,dt,p,ol,h1,h2,h3,h4,h5{font-size: 14px;font-weight: 200;padding: 0;margin: 0;}
 .wrap{margin: 0 auto;}

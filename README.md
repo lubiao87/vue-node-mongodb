@@ -188,11 +188,14 @@ module.exports = router;
  * 可自己创建项目 也可使用此项目，此项目依赖的插件以配置好
   > vue init webpack Demo1 
 
-  > npm install --save axios			*下载获取数据插件*
+  > npm i -g express-generator			        * 安装服务框架 *
 
-  > npm i mongoose --save				*安装数据处理的插件到项目*
+  > npm install --save axios			        *下载获取数据插件*
 
+  > npm i mongoose --save				        *安装数据处理的插件到项目*
 
+  > npm install vue-infinite-scroll --save      *滚动条插件* [滚动条插件使用教程]( https://www.npmjs.com/package/vue-infinite-scroll)  
+  
 
   ![Image text](https://github.com/lubiao87/img/blob/master/v2.png)
   ![Image text](https://github.com/lubiao87/img/blob/master/v3.png)
