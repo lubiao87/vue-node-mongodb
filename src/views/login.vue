@@ -3,14 +3,14 @@
         <div class="gif-left"></div>
         <div class="gif-right"></div>
         <div class="login-top">
-            <h2>请先登陆</h2>
+            <h2>{{$store.state.count}},请先登陆</h2>
             <form>
-                <input type="text" value="User Id" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User Id';}">
-                <input type="password" value="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}">
+                <input type="text" value="User Id" v-model="name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User Id';}">
+                <input type="password" value="password" v-model="psw" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}">
             </form>
             <div class="forgot">
                 <a href="#">忘记密码</a>
-                <input type="submit" value="登陆" @click="submintPush">
+                <input type="submit" value="登陆" @click.stop="submintPush">
             </div>
         </div>
         <div class="login-bottom">
@@ -20,15 +20,21 @@
 </template>
 
 <script>
+import store from '@/vuex/store';
+
     export default {
+        store,
         data(){
             return{
-
+              name:'',
+              psw:''
             }
         },
         methods:{
             submintPush(){
-
+              this.$router.push('/goods');
+             this.$store.commit('seta');
+              
             }
         }
     }

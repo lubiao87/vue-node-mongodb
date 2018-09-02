@@ -18,7 +18,7 @@ module.exports = {
 
     // Various Dev Server settings  代理插件
     host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8989, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: true, //打开浏览器调试
     errorOverlay: true,
     notifyOnErrors: true,

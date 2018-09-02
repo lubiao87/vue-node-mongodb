@@ -2,9 +2,11 @@
     <div class="good-list">
         
         <div class="">
+            <span>{{$store.state.count}}</span>
             <a @click="sortGoods" href="javascript:;" class="sort-btn">
                 排序↓↑
             </a>
+            
         </div>
         <ul class="img-list">
             <li class="item" v-for="item in goodsList">
@@ -26,8 +28,10 @@
 </template>
 
 <script>
+import store from '@/vuex/store';
     import axios from "axios"
     export default {
+        store,
         data(){
             return{
                 isClick:false,
@@ -73,8 +77,8 @@
                             this.goodsList = re.result.list ;
                             this.busy = false;
                         }
-                        console.log(re.result);
-                        console.log(re.result.count+' ' + this.busy);
+                        // console.log(re.result);
+                        // console.log(re.result.count+' ' + this.busy);
                     }else{
                         this.goodsList = "获取数据失败";
                         this.busy = true;
