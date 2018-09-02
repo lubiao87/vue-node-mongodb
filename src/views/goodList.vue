@@ -28,8 +28,9 @@
 </template>
 
 <script>
-import store from '@/vuex/store';
-    import axios from "axios"
+    import store from '@/vuex/store';
+    import axios from "axios";
+
     export default {
         store,
         data(){

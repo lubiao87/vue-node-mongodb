@@ -26,6 +26,42 @@ for(var i in json){
     }
 }        
 console.log('出现次数最多的是:'+iIndex+'出现'+iMax+'次');
+let p1 =Promise.resolve("成功回调1");
+let p2 =Promise.resolve("成功回调2");
+let p3 =Promise.resolve("成功回调3");
+// Promise.reject("失败回调");
+Promise.all([p1,p2,p3]).then((res)=>{
+     console.log(res);
+     //全部成功返回
+}).catch((err)=>{
+    console.log(err)
+})
+let status = true;
+let getUserInfo = (resolve,reject)=>{
+  if (status){
+    resolve({data:"用户信息",msg:"d3122f"});
+  }else{
+    reject({data:"用户信息",msg:"d3122f"});  
+  }
+//   reject({data:"用户信息",msg:"d3122f"});  
+}
+let getUserlogin = (resolve,reject)=>{
+    
+    if (status){
+        resolve([{data:"登陆成功",msg:"的都是"},{adsf:"sdfg"}]);
+  }else{
+    reject([{data:"登陆失败",msg:"d3122f"},{adsf:"sdfg"}]);  
+  }
+//   reject({data:"登陆失败",msg:"d3122f"});  
+}
+new Promise(getUserlogin).then((res)=>{
+    document.write(JSON.stringify(res));
+    document.write("<br/>")
+    return new Promise(getUserInfo);
+}).then(res=>{
+    console.log(res);
+})
+
         </script>
 </body>
 </html>
